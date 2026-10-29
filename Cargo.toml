@@ -1,0 +1,33 @@
+[package]
+name = "hyperspace-connect"
+version = "4.2.0"
+edition = "2021"
+authors = ["YARlabs <hi@yar.ink>"]
+description = "Zero-ETL Universal Data Bridge & Graph/Vector Migrator for HyperspaceDB (Neo4j/Bolt, Kafka/JSON Streams, Qdrant/Pinecone/Milvus)"
+homepage = "https://yar.ink"
+repository = "https://github.com/YARlabs/hyperspace-connect"
+documentation = "https://yar.ink/docs"
+license = "Apache-2.0"
+readme = "README.md"
+keywords = ["hyperspacedb", "zero-etl", "neo4j", "kafka", "vector-database"]
+categories = ["database", "command-line-utilities"]
+
+[lib]
+name = "hyperspace_connect"
+path = "src/lib.rs"
+
+[[bin]]
+name = "hyperspace-connect"
+path = "src/bin/hyperspace-connect.rs"
+
+[dependencies]
+hyperspace-sdk = "4.2.0"
+clap = { version = "4.5", features = ["derive", "env"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+sha2 = "0.10"
+thiserror = "2.0"
+tokio = { version = "1.40", features = ["full"] }
+
+[dev-dependencies]
+tempfile = "3.12"
