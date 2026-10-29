@@ -239,3 +239,4 @@ mod tests {
         assert!((tail_norm_sq - 1.0).abs() < 1e-9);
     }
 }
+
